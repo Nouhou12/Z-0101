@@ -56,10 +56,11 @@
                     auteur.textContent = ` — ${colonnes[4] || 'Auteur inconnu'}`;
 
                     const lien = document.createElement('a');
-                    lien.textContent = ' 🔗 Lien';
+                    lien.textContent = 'Voir le projet';
                     lien.href = colonnes[6] || '#';
                     lien.target = '_blank';
                     lien.rel = 'noopener noreferrer';
+                    lien.class = 'button';
 
                     block.appendChild(nom);
                     block.appendChild(description);
