@@ -10,6 +10,7 @@
     <title>Website Template</title>
     <link rel="stylesheet" href="styles.css">
     <script>
+        /*
         // Retrieve the number from localStorage
         const myNumber = localStorage.getItem('myNumber');
         // When the DOM is loaded, display the number in the main section
@@ -19,26 +20,23 @@
             numberPara.textContent = 'Token: ' + myNumber;
             main.appendChild(numberPara);
         });
+        */
     </script>
 </head>
 <body>
     <header>
-        <h1>My Website</h1>
+        <nav>
+            <a id="title">Z-0101</a>
+            <a href="index.html">Accueil</a>
+            <a href="FeaturedProject.html">Projet vedette</a>
+            <a href="Project.html">Projet</a>
+            <a href="Submit.html">Soumettre un projet</a>
+            <a href="Contact.html">Crédits</a>
+        </nav>
     </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="FeaturedProject.html">Featured Project</a>
-        <a href="Project.html">Project</a>
-        <a href="Submit.html">Submit your own project</a>
-        <a href="reward.html">Reward Page</a>
-        <a href="Contact.html">Contact</a>
-    </nav>
     <main>
-        <h2>Welcome!</h2>
-        <p>This is a project page.</p>
+        <h2>Ce mois ci,</h2>
+        <p>Les projets vedettes sont:</p>
     </main>
-    <footer>
-        &copy; 2024 My Website
-    </footer>
 </body>
 </html>
