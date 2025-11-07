@@ -6,6 +6,7 @@
     <title>Z-0101</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://nouhou12.github.io/Z-0101/index.html" />
+    <link rel="manifest" href="manifest.json">
     <script>
         /*// Retrieve the number from localStorage
         const myNumber = localStorage.getItem('myNumber');
@@ -18,6 +19,20 @@
         });
         */
     </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+            console.log('Service Worker enregistré avec succès:', registration);
+            })
+        .catch(error => {
+        console.error('Échec de l enregistrement du Service Worker:', error);
+            });
+        });
+    }
+    </script>
+    <script scr="install.js" defer></script>
 </head>
 <body>
     <header>
@@ -42,6 +57,14 @@
         <a href="Project.html" class="button">Voir les autres projets</a>
         </br>
         </br>
+        <p>Pour une experience optimale, vous pouvez installer l'application.
+            Le boutton de telechargement se trouve en haut à droite, au niveau de la barre d'addresse.
+            Voici a quoi il peut ressembler
+        </p>
+        <span>
+            <img src="Download.png">
+            <img src="Download2.png">
+        </span>
         <p>A bientot</p>
         <center><img src="Fi (2).png"></center>
     </main>
