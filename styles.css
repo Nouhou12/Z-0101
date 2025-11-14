@@ -72,3 +72,9 @@ div {
 #title{
     margin-right:20%;
 }
+@media (max-width: 600px) {
+    main {
+        margin: 0;
+        padding: 0;
+    }
+}
