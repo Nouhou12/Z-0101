@@ -1,6 +1,6 @@
 const CACHE_NAME = "mon-site-cache-v1";
 const urlsToCache = [
-  "/",             // page d'accueil
+  "/index.html",             // page d'accueil
   "/Project.html"
 ];
 
