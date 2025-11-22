@@ -23,6 +23,16 @@
         */
     </script>
     <script>
+    function convertDriveLink(url) {
+        const regex = /id=([a-zA-Z0-9_-]+)/;
+        const match = url.match(regex);
+
+        if (!match) return url; // Pas un lien Drive compatible
+
+        const id = match[1];
+        return `https://drive.google.com/uc?export=view&id=${id}`;
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         const main = document.querySelector('main');
         const sheetId = "1m1At1nq4GiobfB5D-l0ilSxWHw4f2KjPmzX35uFpJvU";
@@ -47,13 +57,14 @@
                     const block = document.createElement('div');
                     block.classList.add('data-block');
 
+                    let urlImage = colonnes[5];
+                    urlImage = convertDriveLink(urlImage);
+
                     const image = document.createElement('img');
-                    image.src = colonnes[5] || ''; 
+                    image.src = urlImage || ''; 
                     image.style.width = "200px";    // Ajustez selon vos besoins
                     image.style.display = "block";  // Pour éviter l'affichage inline
 
-                    image.onerror = () => console.log("Problème de chargement :", image.src);
-                    image.onload = () => console.log("Image OK :", image.src);
 
                     const nom = document.createElement('strong');
                     nom.textContent = colonnes[2] || 'Nom inconnu';
@@ -105,7 +116,6 @@
     </header>
     <main>
         <h2>Voici ce que les autres ont crées!</h2>
-        <img href="https://drive.google.com/file/d/1YX9c3clkMsSWirTtggR19d-OoVk-iY8L" alt="Divider" class="divider">
     </main>
 </body>
 </html>
