@@ -88,6 +88,10 @@
             });
     });
     </script>
+    <script>
+        image.onerror = () => console.log("Problème de chargement :", image.src);
+        image.onload = () => console.log("Image OK :", image.src);
+    </script>
 </head>
 <body>
     <header>
