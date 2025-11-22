@@ -27,6 +27,9 @@
         const main = document.querySelector('main');
         const sheetId = "1m1At1nq4GiobfB5D-l0ilSxWHw4f2KjPmzX35uFpJvU";
         const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv`;
+        
+        image.onerror = () => console.log("Problème de chargement :", image.src);
+        image.onload = () => console.log("Image OK :", image.src);
 
         fetch(url)
             .then(response => {
@@ -89,8 +92,7 @@
     });
     </script>
     <script>
-        image.onerror = () => console.log("Problème de chargement :", image.src);
-        image.onload = () => console.log("Image OK :", image.src);
+        
     </script>
 </head>
 <body>
