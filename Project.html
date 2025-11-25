@@ -11,16 +11,6 @@
     <link rel="icon" href="Favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <script>
-    function convertDriveLink(url) {
-        const regex = /id=([a-zA-Z0-9_-]+)/;
-        const match = url.match(regex);
-
-        if (!match) return url; // Pas un lien Drive compatible
-
-        const id = match[1];
-        return `https://drive.google.com/uc?export=view&id=${id}`;
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
         const main = document.querySelector('main');
         const sheetId = "1m1At1nq4GiobfB5D-l0ilSxWHw4f2KjPmzX35uFpJvU";
@@ -45,11 +35,8 @@
                     const block = document.createElement('div');
                     block.classList.add('data-block');
 
-                    let urlImage = colonnes[5];
-                    urlImage = convertDriveLink(urlImage);
-
                     const image = document.createElement('img');
-                    image.src = urlImage || ''; 
+                    image.src = colonnes[5] || ''; 
                     image.style.width = "200px";    // Ajustez selon vos besoins
                     image.style.display = "block";  // Pour éviter l'affichage inline
                     image.style.marginLeft = 'auto';
@@ -72,7 +59,9 @@
                     lien.rel = 'noopener noreferrer';
                     lien.className = 'button';
 
-                    block.appendChild(image);
+                    if (colonnes[5] !== '') {
+                        block.appendChild(image);
+                    }
                     block.appendChild(nom);
                     block.appendChild(description);
                     block.appendChild(auteur);
