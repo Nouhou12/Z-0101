@@ -76,7 +76,7 @@ div {
 .author{
     font-style: italic;
     flex-wrap: wrap;
-    margin: 0.5%;
+    padding: 1px;
 }
 @media (max-width: 600px) {
     main {
