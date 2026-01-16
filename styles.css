@@ -73,9 +73,10 @@ div {
 #title{
     margin-right:20%;
 }
-.autor{
+.author{
     font-style: italic;
-    margin-top: 10px;
+    flex-wrap: wrap;
+    margin: 0.5%;
 }
 @media (max-width: 600px) {
     main {
