@@ -3,8 +3,14 @@ const urlsToCache = [
   "/index.html",
   "/Project.html",
   "/style.css",
-  "/script.js"
+  "/script.js",
+  "/loadproject.js",
+  "/service-worker.js",
 ];
+// Service Worker test Script
+fetch('/service-worker.js')
+  .then(r => console.log(r.status))
+  .catch(e => console.error(e));
 
 // Installation
 self.addEventListener("install", (event) => {

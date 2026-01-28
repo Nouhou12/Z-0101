@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.text();
         })
         .then(csv => {
-            console.log("Données CSV :", csv);
+            // console.log("Données CSV :", csv);
             const lignes = csv.trim().split('\n');
 
             lignes.forEach((ligne, index) => {
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 block.appendChild(lien);
 
                 main.appendChild(block);
-                console.log("Bloc ajouté :", block.textContent);
-                console.log("Image brute :", colonnes[5]);
+                // console.log("Bloc ajouté :", block.textContent);
+                // console.log("Image brute :", colonnes[5]);
             });
         })
         .catch(error => {
