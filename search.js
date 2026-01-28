@@ -3,7 +3,7 @@ function search() {
     console.log("Search function initialized");
     const searchInput = document.getElementById("searchInput");
     const searchButton = document.getElementById("searchButton");
-    const projects = document.querySelectorAll(".project-block strong, .project-block p");
+    const projects = document.querySelectorAll(".project-block strong, .project-block div");
     console.log(projects);
 
     function performSearch() {
