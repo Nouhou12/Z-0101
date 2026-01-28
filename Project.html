@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="""en
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@
                     colonnes = nettoyé;
 
                     const block = document.createElement('div');
-                    block.classList.add('data-block');
+                    block.classList.add('project-block');
 
                     const image = document.createElement('img');
                     image.src = colonnes[5] || ''; 
@@ -79,8 +79,10 @@
                 errorMsg.textContent = "Impossible de charger les données.";
                 main.appendChild(errorMsg);
             });
+            document.dispatchEvent(new Event("projectsLoaded"));
     });
     </script>
+    <script src="search.js"></script>
 </head>
 <body>
     <header>
@@ -94,6 +96,10 @@
         </nav>
     </header>
     <main>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Rechercher un projet..."/>
+            <button id="searchButton">Rechercher</button>
+        </div>
         <h2>Voici ce que les autres ont crées!</h2>
     </main>
 </body>

@@ -93,3 +93,29 @@ div {
         margin: 1%;
     }
 }
+
+/* Styles for the search functionality */
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.search-container button {
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.project-item {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
