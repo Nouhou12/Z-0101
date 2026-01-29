@@ -1,11 +1,10 @@
 document.addEventListener("projectsLoaded", search);
-function search() {
+async function search() {
     console.log("Search function initialized");
     const searchInput = document.getElementById("searchInput");
     const searchButton = document.getElementById("searchButton");
     const projects = document.querySelectorAll(".project-block strong, .project-block div");
     console.log(projects);
-
     function performSearch() {
         const query = searchInput.value.toLowerCase();
         console.log("Performing search for:", query);

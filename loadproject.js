@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', loadproject);
+
+function loadproject() {
     const main = document.querySelector('main');
     const sheetId = "1m1At1nq4GiobfB5D-l0ilSxWHw4f2KjPmzX35uFpJvU";
     const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv`;
@@ -75,7 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMsg.textContent = "Impossible de charger les données.";
             main.appendChild(errorMsg);
         });
-    document.dispatchEvent(new Event("projectsLoaded"));
+
+
+        document.dispatchEvent(new Event("projectsLoaded"));
     // Debug Test
     /*
     console.log("Testing");
@@ -126,6 +130,25 @@ document.addEventListener('DOMContentLoaded', function () {
         main.appendChild(block);
     }
         */
-    
-
-});
+}
+document.addEventListener("projectsLoaded", search);
+setTimeout(search, 1000);
+async function search() {
+    console.log("Search function initialized");
+    await chargerScript2();
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+    const projects = document.querySelectorAll(".project-block strong, .project-block div");
+    console.log(projects);
+    function performSearch() {
+        const query = searchInput.value.toLowerCase();
+        console.log("Performing search for:", query);
+        projects.forEach(project => {
+            const text = project.textContent.toLowerCase();
+            console.log("Checking project:", text);
+            project.style.display = text.includes(query) ? "block" : "none";
+        });
+    }
+    searchButton.addEventListener("click", performSearch);
+    searchInput.addEventListener("input", performSearch);
+}
