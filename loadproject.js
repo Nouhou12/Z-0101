@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const image = document.createElement('img');
                 image.src = colonnes[5] || '';
-                image.style.width = "200px";    // Ajustez selon vos besoins
+                image.style.width = "400px";    // Ajustez selon vos besoins
                 image.style.display = "block";  // Pour éviter l'affichage inline
                 image.style.marginLeft = 'auto';
                 image.style.marginRight = 'auto';
