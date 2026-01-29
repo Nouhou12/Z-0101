@@ -133,12 +133,12 @@ function loadproject() {
 }
 document.addEventListener("projectsLoaded", search);
 setTimeout(search, 1000);
-async function search() {
+function search() {
     console.log("Search function initialized");
-    await chargerScript2();
     const searchInput = document.getElementById("searchInput");
     const searchButton = document.getElementById("searchButton");
-    const projects = document.querySelectorAll(".project-block strong, .project-block div");
+    const projects = document.querySelectorAll(".project-block strong");
+    const projectsdescription = document.querySelectorAll(".project-block div");
     console.log(projects);
     function performSearch() {
         const query = searchInput.value.toLowerCase();
@@ -146,8 +146,16 @@ async function search() {
         projects.forEach(project => {
             const text = project.textContent.toLowerCase();
             console.log("Checking project:", text);
-            project.style.display = text.includes(query) ? "block" : "none";
+            project.parentElement.style.display = text.includes(query) ? "block" : "none";
         });
+        projectsdescription.forEach(description => {
+            const text = description.textContent.toLowerCase();
+            console.log("Checking description:", text);
+            if (text.includes(query)){
+                description.parentElement.style.display = "block";
+            }
+        });
+
     }
     searchButton.addEventListener("click", performSearch);
     searchInput.addEventListener("input", performSearch);
