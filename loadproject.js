@@ -148,6 +148,7 @@ function search() {
             console.log("Checking project:", text);
             project.parentElement.style.display = text.includes(query) ? "block" : "none";
         });
+        /*
         projectsdescription.forEach(description => {
             const text = description.textContent.toLowerCase();
             console.log("Checking description:", text);
@@ -155,6 +156,7 @@ function search() {
                 description.parentElement.style.display = "block";
             }
         });
+        */
 
     }
     searchButton.addEventListener("click", performSearch);
