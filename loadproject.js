@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     document.dispatchEvent(new Event("projectsLoaded"));
     // Debug Test
+    /*
     console.log("Testing");
     let i;
     for (i = 0;i <= 3;i++) {
@@ -124,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         main.appendChild(block);
     }
+        */
     
 
 });
