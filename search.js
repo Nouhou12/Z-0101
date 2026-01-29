@@ -13,7 +13,6 @@ function search() {
             const text = project.textContent.toLowerCase();
             console.log("Checking project:", text);
             project.style.display = text.includes(query) ? "block" : "none";
-            console.log("Searched for:", query);
         });
     }
     searchButton.addEventListener("click", performSearch);

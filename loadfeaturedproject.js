@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                 const nom = document.createElement('strong');
-                nom.textContent = colonnes[2] || 'Nom inconnu';
+                nom.textContent = colonnes[0] || 'Nom inconnu';
 
                 const description = document.createElement('div');
                 description.textContent = `${colonnes[3] || 'Description'}`;
@@ -42,18 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 auteur.className = 'author';
                 auteur.textContent = `Auteur — ${colonnes[4] || 'Auteur inconnu'}`;
 
-                const contact = document.createElement('a');
-                contact.textContent = 'Contacter l’auteur';
-                contact.href = "mailto:" + colonnes[1] || '#';
-                contact.target = '_blank';
-                contact.rel = 'noopener noreferrer';
-                contact.className = 'button';
-
                 const lien = document.createElement('a');
                 lien.textContent = 'Voir le projet';
-                lien.href = colonnes[6] || '#';
-                lien.target = '_blank';
-                lien.rel = 'noopener noreferrer';
+                lien.href = `Project#${colonnes[0]}`;
                 lien.className = 'button';
 
                 if (colonnes[5] !== '') {
@@ -62,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 block.appendChild(nom);
                 block.appendChild(description);
                 block.appendChild(auteur);
-                block.appendChild(contact);
                 block.appendChild(lien);
 
                 main.appendChild(block);

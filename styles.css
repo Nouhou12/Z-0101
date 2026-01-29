@@ -1,95 +1,111 @@
-body { 
+body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0rem;
     padding: 0rem;
     background: #ffffff;
     color: #000000;
 }
-h1,h2{
+
+h1,
+h2 {
     font-weight: normal;
 }
+
 main {
     margin: 2rem;
 }
+
 header {
     position: sticky;
     top: 0;
-    width:100%;
+    width: 100%;
     background: #ffffff;
     color: #fff;
     padding: 4rem;
     padding: 0%;
-    text-align: center; }
-        
-nav { 
-    background: #ecfcc2; 
-    padding: 2%; 
+    text-align: center;
+}
+
+nav {
+    background: #ecfcc2;
+    padding: 2%;
     box-sizing: border-box;
-    text-align: center; 
+    text-align: center;
     transition: color 0.3s ease;
 }
+
 nav a {
-    color: #000000; 
+    color: #000000;
     padding: 1%;
     text-decoration: none;
     position: relative;
-    transition: color 0.2s ease,font-size 0.2s ease;
+    transition: color 0.2s ease, font-size 0.2s ease;
 }
-nav a:hover{
+
+nav a:hover {
     color: #c2a500;
     font-size: large;
 }
+
 .button {
-    color: #000000; 
+    color: #000000;
     padding: 1%;
     text-decoration: none;
-    position: relative;
-    transition: color 0.2s ease,font-size 0.2s ease;
+    transition: color 0.2s ease, font-size 0.2s ease;
     border: solid 1px;
 }
-.button:hover{
+
+.button:hover {
     color: #c2a500;
     font-size: large;
 }
+
 main {
-    padding-left: 20%; 
-    padding-right: 20%; 
+    padding-left: 20%;
+    padding-right: 20%;
 }
+
 footer {
     background: #1d2504;
-    color: #fff; 
-    text-align: center; 
-    padding: 1rem; 
-    position: fixed; 
-    width: 100%; 
-    bottom: 0; 
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
+
 div {
     border-color: #333;
     border-style: solid;
     margin: 5%;
     padding: 2rem;
 }
-#title{
-    margin-right:20%;
+
+#title {
+    margin-right: 20%;
 }
-.author{
+
+.author {
     font-style: italic;
     flex-wrap: wrap;
     padding: 1px;
     border-style: none;
 }
+
 @media (max-width: 600px) {
     main {
         margin: 1%;
         padding: 0.5%;
     }
+
     nav {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
     }
-    nav a{
+
+    nav a {
         margin: 1%;
     }
 }
@@ -97,25 +113,28 @@ div {
 /* Styles for the search functionality */
 
 .search-container {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  border: none;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border: none;
 }
 
 .search-container input {
-  flex: 1;
-  padding: 10px;
-  font-size: 14px;
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
 }
 
 .search-container button {
-  padding: 10px 16px;
-  cursor: pointer;
+    background: none;
+    color: #000000;
+    padding: 1%;
+    text-decoration: none;
+    transition: color 0.2s ease, font-size 0.2s ease;
+    border: solid 1px;
 }
 
-.project-item {
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
+.search-container button:hover {
+    color: #c2a500;
+    font-size: large;
 }
-
