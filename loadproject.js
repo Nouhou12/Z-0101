@@ -40,6 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 auteur.className = 'author';
                 auteur.textContent = `Auteur — ${colonnes[4] || 'Auteur inconnu'}`;
 
+                const contact = document.createElement('a');
+                contact.textContent = 'Contacter l’auteur';
+                contact.href = "mailto:" + colonnes[1] || '#';
+                contact.target = '_blank';
+                contact.rel = 'noopener noreferrer';
+                contact.className = 'button';
+
                 const lien = document.createElement('a');
                 lien.textContent = 'Voir le projet';
                 lien.href = colonnes[6] || '#';
@@ -53,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 block.appendChild(nom);
                 block.appendChild(description);
                 block.appendChild(auteur);
+                block.appendChild(contact);
                 block.appendChild(lien);
 
                 main.appendChild(block);
