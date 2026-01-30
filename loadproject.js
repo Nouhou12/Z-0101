@@ -77,59 +77,7 @@ function loadproject() {
             errorMsg.textContent = "Impossible de charger les données.";
             main.appendChild(errorMsg);
         });
-
-
         document.dispatchEvent(new Event("projectsLoaded"));
-    // Debug Test
-    /*
-    console.log("Testing");
-    let i;
-    for (i = 0;i <= 3;i++) {
-        const block = document.createElement('div');
-        block.classList.add('project-block');
-
-        const image = document.createElement('img');
-        image.src = '#';
-        image.style.width = "400px";    // Ajustez selon vos besoins
-        image.style.display = "block";  // Pour éviter l'affichage inline
-        image.style.marginLeft = 'auto';
-        image.style.marginRight = 'auto';
-
-
-        const nom = document.createElement('strong');
-        nom.textContent = 'Nom inconnu'+i;
-
-        const description = document.createElement('div');
-        description.textContent = 'Description';
-
-        const auteur = document.createElement('div');
-        auteur.className = 'author';
-        auteur.textContent = 'Auteur inconnu';
-
-        const contact = document.createElement('a');
-        contact.textContent = 'Contacter l’auteur';
-        contact.href = "#";
-        contact.target = '_blank';
-        contact.rel = 'noopener noreferrer';
-        contact.className = 'button';
-
-        const lien = document.createElement('a');
-        lien.textContent = 'Voir le projet';
-        lien.href =  '#';
-        lien.target = '_blank';
-        lien.rel = 'noopener noreferrer';
-        lien.className = 'button';
-
-        block.appendChild(image);
-        block.appendChild(nom);
-        block.appendChild(description);
-        block.appendChild(auteur);
-        block.appendChild(contact);
-        block.appendChild(lien);
-
-        main.appendChild(block);
-    }
-        */
 }
 document.addEventListener("projectsLoaded", search);
 setTimeout(search, 1000);
