@@ -43,6 +43,20 @@ function loadproject() {
                 auteur.className = 'author';
                 auteur.textContent = `Auteur — ${colonnes[4] || 'Auteur inconnu'}`;
 
+                const licence = document.createElement('div');
+                licence.className = 'licence';
+                licence.textContent = `Licence — ${colonnes[7] || 'Licence inconnue'}`;
+
+                const prix = document.createElement('div');
+                prix.className = 'price';
+                prix.textContent = `Prix — ${colonnes[8] || 'Gratuit'}`;
+
+                if (colonnes[9] !== '') {
+                    const note = document.createElement('div');
+                    note.className = 'note';
+                    note.textContent = `Note — ${colonnes[9] || 'Note inconnue'}`;
+                }
+
                 const contact = document.createElement('a');
                 contact.textContent = 'Contacter l’auteur';
                 contact.href = "mailto:" + colonnes[1] || '#';
@@ -63,6 +77,8 @@ function loadproject() {
                 block.appendChild(nom);
                 block.appendChild(description);
                 block.appendChild(auteur);
+                block.appendChild(licence);
+                block.appendChild(prix);
                 block.appendChild(contact);
                 block.appendChild(lien);
 
