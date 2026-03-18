@@ -34,9 +34,11 @@ function loadproject() {
 
 
                 const nom = document.createElement('strong');
+                nom.className = 'project-name';
                 nom.textContent = colonnes[2] || 'Nom inconnu';
 
                 const description = document.createElement('div');
+                description.className = 'description';
                 description.textContent = `${colonnes[3] || 'Description'}`;
 
                 const auteur = document.createElement('div');

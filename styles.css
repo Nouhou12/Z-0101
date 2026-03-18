@@ -82,6 +82,29 @@ div {
     padding: 2rem;
 }
 
+.description {
+    border-radius: 20px;
+    border-style: block;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-color: #ecfcc2;
+    margin: 0%;
+}
+
+.project-name {
+    font-size: larger;
+    margin: 5px;
+    justify-content: center;
+}
+
+.project-block{
+    border-radius: 20px;
+    border-style: block;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-color: #ecfcc2;
+}
+
 #title {
     margin-right: 20%;
 }
@@ -123,12 +146,16 @@ div {
         margin: 1%;
     }
 
+    .description{
+        margin: 2%;
+        padding: 0px;
+    }
+
     .project-block {
-        margin: 0%;
+        margin: 10px;
         margin-top: 80px;
         margin-bottom: 80px;
         padding: 0%;
-        border: none;
     }
 }
 
