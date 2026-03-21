@@ -100,9 +100,11 @@ div {
 .project-block{
     border-radius: 20px;
     border-style: block;
-    border-top: 1px;
-    border-bottom: 1px;
-    border-color: #ecfcc2;
+    border-top: 3px;
+    border-bottom: 3px;
+    padding-top: 5px
+    padding-bottom: 5px
+    border-color: #000000;
 }
 
 #title {
@@ -155,7 +157,6 @@ div {
         margin: 10px;
         margin-top: 80px;
         margin-bottom: 80px;
-        padding: 0%;
     }
 }
 
