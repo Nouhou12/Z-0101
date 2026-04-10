@@ -14,6 +14,9 @@ function loadproject() {
             // console.log("Données CSV :", csv);
             const lignes = csv.trim().split('\n');
 
+            // Randomize line order
+            lignes.slice(1).sort(() => Math.random() - 0.5);
+
             lignes.forEach((ligne, index) => {
                 if (index === 0) return; // Ignorer l'en-tête éventuel
                 let colonnes = ligne.split(',');
@@ -76,6 +79,7 @@ function loadproject() {
                 if (colonnes[5] !== '') {
                     block.appendChild(image);
                 }
+                
                 block.appendChild(nom);
                 block.appendChild(description);
                 block.appendChild(auteur);
