@@ -4,6 +4,7 @@ function loadproject() {
     const main = document.querySelector('main');
     const sheetId = "1m1At1nq4GiobfB5D-l0ilSxWHw4f2KjPmzX35uFpJvU";
     const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv`;
+    const MAX_PROJECTS = 3; // Ajustable selon vos besoins
 
     fetch(url)
         .then(response => {
@@ -17,7 +18,15 @@ function loadproject() {
             // Randomize line order
             const data = lignes.slice(1).sort(() => Math.random() - 0.5);
 
-            data.forEach((ligne, index) => {
+            for (let i = data.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [data[i], data[j]] = [data[j], data[i]];
+            }
+
+            // Limiter à N projets
+            const selectedProjects = data.slice(0, MAX_PROJECTS);
+
+            selectedProjects.forEach((ligne, index) => {
                 if (index === 0) return; // Ignorer l'en-tête éventuel
                 let colonnes = ligne.split(',');
 
@@ -79,7 +88,7 @@ function loadproject() {
                 if (colonnes[5] !== '') {
                     block.appendChild(image);
                 }
-                
+
                 block.appendChild(nom);
                 block.appendChild(description);
                 block.appendChild(auteur);
@@ -99,8 +108,9 @@ function loadproject() {
             errorMsg.textContent = "Impossible de charger les données.";
             main.appendChild(errorMsg);
         });
-        document.dispatchEvent(new Event("projectsLoaded"));
+    document.dispatchEvent(new Event("projectsLoaded"));
 }
+
 document.addEventListener("projectsLoaded", search);
 setTimeout(search, 1000);
 function search() {
