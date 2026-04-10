@@ -4,7 +4,8 @@ function loadproject() {
     const main = document.querySelector('main');
     const sheetId = "1m1At1nq4GiobfB5D-l0ilSxWHw4f2KjPmzX35uFpJvU";
     const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv`;
-    const MAX_PROJECTS = 3; // Ajustable selon vos besoins
+
+    const MAX_PROJECTS = 4; // Ajustable selon vos besoins
 
     fetch(url)
         .then(response => {
@@ -65,11 +66,10 @@ function loadproject() {
                 prix.className = 'price';
                 prix.textContent = `Prix — ${colonnes[8] || 'Gratuit'}`;
 
-                if (colonnes[9] !== '') {
-                    const note = document.createElement('div');
-                    note.className = 'note';
-                    note.textContent = `Note — ${colonnes[9] || 'Note inconnue'}`;
-                }
+
+                const note = document.createElement('div');
+                note.className = 'note';
+                note.textContent = `Note — ${colonnes[9] || 'Aucune note'}`;
 
                 const contact = document.createElement('a');
                 contact.textContent = 'Contacter l’auteur';
@@ -88,7 +88,6 @@ function loadproject() {
                 if (colonnes[5] !== '') {
                     block.appendChild(image);
                 }
-
                 block.appendChild(nom);
                 block.appendChild(description);
                 block.appendChild(auteur);
@@ -96,6 +95,9 @@ function loadproject() {
                 block.appendChild(prix);
                 block.appendChild(contact);
                 block.appendChild(lien);
+                if (colonnes[9] !== '') {
+                    block.appendChild(note);
+                }
 
                 main.appendChild(block);
                 // console.log("Bloc ajouté :", block.textContent);
