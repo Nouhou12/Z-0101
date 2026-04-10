@@ -15,9 +15,9 @@ function loadproject() {
             const lignes = csv.trim().split('\n');
 
             // Randomize line order
-            lignes.slice(1).sort(() => Math.random() - 0.5);
+            const data = lignes.slice(1).sort(() => Math.random() - 0.5);
 
-            lignes.forEach((ligne, index) => {
+            data.forEach((ligne, index) => {
                 if (index === 0) return; // Ignorer l'en-tête éventuel
                 let colonnes = ligne.split(',');
 
