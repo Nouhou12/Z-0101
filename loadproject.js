@@ -53,11 +53,10 @@ function loadproject() {
                 prix.className = 'price';
                 prix.textContent = `Prix — ${colonnes[8] || 'Gratuit'}`;
 
-                if (colonnes[9] !== '') {
-                    const note = document.createElement('div');
-                    note.className = 'note';
-                    note.textContent = `Note — ${colonnes[9] || 'Note inconnue'}`;
-                }
+                
+                const note = document.createElement('div');
+                note.className = 'note';
+                note.textContent = `Note — ${colonnes[9] || 'Aucune note'}`;
 
                 const contact = document.createElement('a');
                 contact.textContent = 'Contacter l’auteur';
@@ -83,6 +82,9 @@ function loadproject() {
                 block.appendChild(prix);
                 block.appendChild(contact);
                 block.appendChild(lien);
+                if (colonnes[9] !== '') {
+                    block.appendChild(note);
+                }
 
                 main.appendChild(block);
                 // console.log("Bloc ajouté :", block.textContent);
