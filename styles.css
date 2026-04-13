@@ -78,6 +78,8 @@ footer {
 div {
     border-color: #333;
     border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
     margin: 5%;
     padding: 2rem;
 }
@@ -97,7 +99,7 @@ div {
     justify-content: center;
 }
 
-.project-block{
+.project-block , #jobs{
     border-radius: 20px;
     border-style: block;
     border-top: 1px;
@@ -193,24 +195,3 @@ img {
     height: auto;
     display: block;
 }
-
-/* @media (min-width: 768px) and (max-width: 1023px) {
-    main {
-        margin: 1rem;
-        padding: 0;
-    }
-
-    div {
-        border-color: #333;
-        border-style: solid;
-        margin: 0%;
-        padding: 0rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    main {
-        padding-left: 20%;
-        padding-right: 20%;
-    }
-} */

@@ -112,35 +112,3 @@ function loadproject() {
         });
     document.dispatchEvent(new Event("projectsLoaded"));
 }
-
-document.addEventListener("projectsLoaded", search);
-setTimeout(search, 1000);
-function search() {
-    console.log("Search function initialized");
-    const searchInput = document.getElementById("searchInput");
-    const searchButton = document.getElementById("searchButton");
-    const projects = document.querySelectorAll(".project-block strong");
-    const projectsdescription = document.querySelectorAll(".project-block div");
-    console.log(projects);
-    function performSearch() {
-        const query = searchInput.value.toLowerCase();
-        console.log("Performing search for:", query);
-        projects.forEach(project => {
-            const text = project.textContent.toLowerCase();
-            console.log("Checking project:", text);
-            project.parentElement.style.display = text.includes(query) ? "block" : "none";
-        });
-        /*
-        projectsdescription.forEach(description => {
-            const text = description.textContent.toLowerCase();
-            console.log("Checking description:", text);
-            if (text.includes(query)){
-                description.parentElement.style.display = "block";
-            }
-        });
-        */
-
-    }
-    searchButton.addEventListener("click", performSearch);
-    searchInput.addEventListener("input", performSearch);
-}
