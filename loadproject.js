@@ -14,7 +14,9 @@ function loadproject() {
             // console.log("Données CSV :", csv);
             const lignes = csv.trim().split('\n');
 
-            lignes.forEach((ligne, index) => {
+            const data = lignes.slice(1).sort(() => Math.random() - 0.5);
+
+            data.forEach((ligne, index) => {
                 if (index === 0) return; // Ignorer l'en-tête éventuel
                 let colonnes = ligne.split(',');
 
@@ -53,11 +55,10 @@ function loadproject() {
                 prix.className = 'price';
                 prix.textContent = `Prix — ${colonnes[8] || 'Gratuit'}`;
 
-                if (colonnes[9] !== '') {
-                    const note = document.createElement('div');
-                    note.className = 'note';
-                    note.textContent = `Note — ${colonnes[9] || 'Note inconnue'}`;
-                }
+                
+                const note = document.createElement('div');
+                note.className = 'note';
+                note.textContent = `Note — ${colonnes[9] || 'Aucune note'}`;
 
                 const contact = document.createElement('a');
                 contact.textContent = 'Contacter l’auteur';
@@ -83,6 +84,9 @@ function loadproject() {
                 block.appendChild(prix);
                 block.appendChild(contact);
                 block.appendChild(lien);
+                if (colonnes[9] !== '') {
+                    block.appendChild(note);
+                }
 
                 main.appendChild(block);
                 // console.log("Bloc ajouté :", block.textContent);
