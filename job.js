@@ -22,9 +22,7 @@ async function loadJobs() {
         const contact = cols[4];
         const offercomplete = cols[5];
 
-
         if (!title) return;
-
         if (offercomplete.toLowerCase() === "oui") return;
 
         const div = document.createElement('div');
@@ -33,7 +31,7 @@ async function loadJobs() {
         div.innerHTML = `
             <h3>${title}</h3>
             <p>${description}</p>
-            <p>${payment}</p>
+            <p>Paiement: ${payment}</p>
             <a href="mailto:${contact}" class="button">Contact: ${contact}</a>
         `;
 
